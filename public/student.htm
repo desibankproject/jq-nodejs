@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Factorial</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+  <script>
+		//Ready Handler is function which will be  called when dom is loaded into the memory!
+		 $(document).ready(function(){
+				//All the jQuery code we will write here
+				//document.elementById("load");
+				$("#load").click(function(){
+					//fetching JSON data from txt file
+					$.getJSON("students.txt",function(data){ //data will hold json data as a JavaScript object
+						 //data is Array of JavaScript object	
+						 //console.log(data);
+						/*  data.forEach(pdata=>{
+							console.log(pdata);
+						 }) */
+						 var tbcontents="";
+						 for(var x=0;x<data.length;x++){
+							console.log(data[x]);
+							tbcontents=tbcontents+'<tr>';
+							tbcontents=tbcontents+'<td>'+(x+1)+'</td>';
+							tbcontents=tbcontents+'<td>'+data[x].name+'</td>';
+							tbcontents=tbcontents+'<td>'+data[x].email+'</td>';
+							tbcontents=tbcontents+'<td>'+data[x].mobile+'</td>';
+							tbcontents=tbcontents+'<td>'+data[x].gender+'</td>';
+							tbcontents=tbcontents+'<td><img src="'+data[x].photo+'" style="height:120px;"/></td>';
+							tbcontents=tbcontents+'</tr>';
+						 }
+						 $("#tcontents").html(tbcontents);
+					});
+
+				});
+	     });
+	
+  </script>
+</head>
+<body>
+
+<header style="height: 30px;background-color: #cddc39;">
+
+</header>
+
+<div class="container">
+   <img src="icon.png"/> 	
+  <h2>Student data coming from JSON!</h2>
+   <hr/>
+    <button type="button" class="btn btn-primary"  id="load">Load data!</button>
+     <br/><br/>
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>SNO</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Gender</th>
+         <th>Image</th>
+      </tr>
+    </thead>
+    <tbody id="tcontents">
+       <tr>
+        <td>&nbsp;</td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

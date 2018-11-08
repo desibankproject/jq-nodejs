@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Factorial</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+  <script>
+		function clearText(){
+			var spanObj=document.getElementById("cresult");
+			spanObj.innerHTML="";
+		}
+  		var count=2;
+  		function calfact(){
+			console.log("Hey!!!!!!!!!!!!!!!!!!");
+			var pnum=window.document.factform.num.value;
+			var spanObj=document.getElementById("cresult");
+			if(pnum.trim().length==0){
+				spanObj.innerHTML="Sorry! num cannot be blank!";
+				window.document.factform.num.focus();
+				return;
+			}
+			var fact=1;
+			for(var  x=2;x<=pnum;x++){
+				fact=fact*x;	
+			}
+			console.log("Result is "+fact);
+			//accesing object by id
+			spanObj.innerHTML="Result is "+fact;
+			//below line will give you an object of what ? image
+			var  tq=document.getElementById("imgid");
+			tq.src="student.jpg";
+			tq.style="height:120px;";
+			
+			var rowdata="<tr>";
+			rowdata=rowdata+"<td>"+count+"</td>";
+			rowdata=rowdata+"<td>"+pnum+"</td>";
+			rowdata=rowdata+"<td>"+fact+"</td>";
+			rowdata=rowdata+"</tr>";
+			count++;
+			//adding one row inside when tbody id is tcontents
+			$("#tcontents").append(rowdata);
+			
+  	  	}
+  </script>
+</head>
+<body>
+
+<header style="height: 30px;background-color: #cddc39;">
+
+</header>
+
+<div class="container">
+   <img src="icon.png"/> 	
+  <h2>Factorial Program!</h2>
+  <form id="factform" name="factform">
+    <div class="form-group">
+      <label for="snum">Num:</label>
+      <input onkeydown="clearText();" type="number" class="form-control" style="width: 500px;" id="num" placeholder="Enter num" name="num">
+    </div>
+    <button type="button" class="btn btn-primary" onclick="calfact();">Cal Fact!</button>
+    <br/><br/>
+     <img src="result.jpg" id="imgid" style="height:120px;"/> <span id="cresult" style="color: red;font-size: 24px;">coming soon!!!!!!!!!!!!!!</span> 	
+  </form>
+   <hr/>
+   
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>SNO</th>
+        <th>Num</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody id="tcontents">
+      <tr>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

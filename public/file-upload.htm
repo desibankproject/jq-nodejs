@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Profile Upload Example!!!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="js/file-image-loader.js">
+  </script>
+  <script src="js/sorting-tab.js">
+  </script>
+
+<style>
+    
+    .zoom {
+         padding: 5px;
+         transition: transform .2s;
+         margin: 0 auto;
+    }
+    
+    .zoom:hover {
+        -ms-transform: scale(1.5); /* IE 9 */
+        -webkit-transform: scale(1.5); /* Safari 3-8 */
+        transform: scale(1.5); 
+    }
+    </style>
+</head>
+<body>
+
+<header style="height: 30px;background-color: #cddc39;">
+</header>
+
+<div class="container">
+   <img src="icon.png"/> 	
+  <h2>Student data coming from JSON!</h2>
+   <hr/>
+    <button type="button" class="btn btn-primary"  id="load">Load data!</button>
+     &nbsp;&nbsp;&nbsp;&nbsp;
+     <button type="button" class="btn btn-danger"  id="addStudent">Add Student!</button>
+     <br/><br/>
+     <span id="appmessage" style="font-size: 20px;"></span>
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>SNO</th>
+        <th>Name</th>
+        <th>
+        	Email
+        	<a href="javascipt:" id="dsorting">
+        	<img src="img/up.png">
+        	</a>
+        	<a href="javascipt:" id="asorting"><img src="img/down.png"></a>
+        </th>
+        <th>Mobile</th>
+        <th>Gender</th>
+         <th>Image</th>
+      </tr>
+    </thead>
+    <tbody id="tcontents">
+       <tr>
+        <td>&nbsp;</td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+       <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- The Modal
+SUBMITTING FORM DATA WITH IMAGE ATTACHMENT USING AJAX AND THEN GETTING JSON RESPONSE!
+ -->
+<form id="imageUploadAjaxForm"  enctype="multipart/form-data">
+<input type="hidden" name="sno" id="spsno" value="0"/>
+<div class="modal" id="addStudentModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">
+        <img src="icon.png" style="height: 60px;"/>
+        Student!</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+     		  <div class="form-group">
+     		  		
+   				 <label for="name">Name:</label>
+    				<input type="text" class="form-control" id="name" name="name">
+ 			 </div>
+ 			 
+ 			 <div class="form-group">
+   				 <label for="email">Email:</label>
+    				<input type="email" class="form-control" id="email" name="email">
+ 			 </div>
+ 			 
+ 			 
+ 			 <div class="form-group">
+   				 <label for="mobile">Mobile:</label>
+    				<input type="text" class="form-control" id="mobile" name="mobile">
+ 			 </div>
+ 			 
+ 			 <div class="form-group">
+   				 <label for="gender">Gender:</label>
+    				<input type="text" class="form-control" id="gender" name="gender">
+ 			 </div>
+ 			 
+ 			 <div class="form-group">
+   				 <label for="photo">Photo:</label>
+    				<input type="file" class="form-control" id="bphoto" name="photo">
+    				<img src="" id="ephoto" style="height: 60px;">
+    				 New Image 
+    				<img src="" id="csphoto" style="height: 80px;" class="img-thumbnail">
+ 			 </div>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+       <button type="button" class="btn btn-danger" id="upload">Upload</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+</body>
+</html>

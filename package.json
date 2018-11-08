@@ -1,0 +1,19 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "web project",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Nagendra",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.0.0",
+    "mongodb": "^3.1.9",
+    "mongoose": "^5.3.10",
+    "randomstring": "^1.1.5"
+  }
+}

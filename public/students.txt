@@ -1,0 +1,21 @@
+[{
+ "name":"Nagendra",
+ "email":"nagen@gmail.com",
+ "mobile":"+91828282782",
+ "gender":"Male",
+ "photo" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUWiyESGecziS7QIKUyoJbYt_YBAz54SQ3ya-ZsUFeevCsVh7eVw"
+ },
+ {
+ "name":"Rahul",
+ "email":"rahul@gmail.com",
+ "mobile":"+919848484",
+ "gender":"Male",
+ "photo" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-2Pel5eV85dHRL33Z74EwQNbm18OoiTSGXWKJyr0qOJDEXAVrsw"
+ },
+ {
+ "name":"Rasmi",
+ "email":"rasmi@gmail.com",
+ "mobile":"+8762552522",
+ "gender":"Female",
+ "photo" :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnQea6uDBFZlVGHp-nofyms7HdTVB8sq23qE5JdqkCNc_ZXlgT"
+ }]
